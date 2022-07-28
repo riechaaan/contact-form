@@ -1,16 +1,12 @@
 <?php
+// 入力ページ
+Route::get('/', 'ContactsController@index')->name('contact');
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// 確認ページ
+Route::post('/confirm', 'ContactsController@confirm')->name('confirm');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// DB挿入
+Route::post('/process', 'ContactsController@process')->name('process');
+
+// 完了ページ
+Route::get('/complete', 'ContactsController@complete')->name('complete');
